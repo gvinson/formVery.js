@@ -39,7 +39,7 @@ $(document).ready(function(){
         });
 	});
 });
-
+</code>
 Add the class name "formVery" to all inputs you wish to have validated. This will simply not allow null values in that input.
 If you want to have special validation, you must add the following classes to validate the corresponding input types.
 <table>
@@ -75,20 +75,20 @@ If you want to have special validation, you must add the following classes to va
 
 API
 ====
-<h2>errorClass</h2>
+<h3>errorClass</h3>
 The errorClass property is the CSS class that will be applied to the input on error. This plug in does not how any text associated with the errors. Instead, it modifies the actual input's apperance with the CSS class.
 
-<h2>dateStyle</h2>
+<h3>dateStyle</h3>
 The dateStyle property is the format in which you wish date input textboxes to resemble. For example, if you wanted the dates to be in the form of
 01/28/1989, the dateStyle would be set to 'mm/dd/yyyy'. If you wanted it to be like 1-28-99, you would pass in 'm-dd-yy'.
 
-<h2>dateSplitter</h2>
+<h3>dateSplitter</h3>
 The dateSplitter property is what the delimeter is for the dateStyle. You <u><b>must</b></u> inlcude this if you set dateStyle.
 
-<h2>addMoneySign</h2>
+<h3>addMoneySign</h3>
 The addMoneySign property tells formVery.js to add a '$' to the left of the input box for all .formMoney class inputs.
 
-<h2>success</h2>
+<h3>success</h3>
 The success property is a function. This function is what runs when the form is finished validating. It is best to check if the 'valid' parameter is 
 set to true or false and perform the needed actions inside the if statement.
 
