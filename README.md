@@ -16,7 +16,7 @@ Things Needed For Plugin
 
 How To Use
 ===========
-<code>
+```javascript
 	// #send is the form's submit button
 	// #contactForm is the form itself
 	$("#send").on('click',function(e){
@@ -36,7 +36,7 @@ How To Use
             }
         });
 	});
-</code>
+```
 
 Add the class name "formVery" to all inputs you wish to have validated. This will simply not allow null values in that input.
 If you want to have special validation, you must add the following classes to validate the corresponding input types:
