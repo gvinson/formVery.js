@@ -23,6 +23,7 @@ How To Use
 $("#send").on('click',function(e){
 	//prevent form from being submitted before validation
 	e.preventDefault();
+	
 	$("#contactForm").formVery({
         errorClass: 'error',
         addMoneySign: true,
