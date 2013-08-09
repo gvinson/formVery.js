@@ -1,41 +1,43 @@
-formEasy.js
+formVery.js
 ===========
 
-formEasy.js is a simple jQuery plugin that validates html forms. It is very simple to use
+formVery.js is a simple jQuery plugin that validates html forms. It is very simple to use
 and very lightweight. 
 
 Things Needed For Plugin
 ========================
 <ul>
 	<li>jQuery Library v1.9+</li>
-	<li>formEasy.js</li>
+	<li>formVery.js</li>
 	<li>CSS error class<br>
-		<span style="margin-left:2em;">ie: light red background and dark red border</span>
+			ie: light red background and dark red border
 	</li>
 </ul>
 
 How To Use
 ===========
 ```javascript
-	// #send is the form's submit button
-	// #contactForm is the form itself
-	$("#send").on('click',function(e){
-		e.preventDefault(); //prevent form from being submitted before validation
-		$("#contactForm").formVery({
-            errorClass: 'error',
-            addMoneySign: true,
-            dateStyle: 'mm/dd/yyyy',
-            dateSplitter: '/',
-            success: function(valid){
-            	//if successful
-            	if(valid){
-                	//perform success function here
-                } else {
-                	//perform error function here
-                }
+// #send is the form's submit button
+// #contactForm is the form itself
+
+$("#send").on('click',function(e){
+	//prevent form from being submitted before validation
+	e.preventDefault();
+	$("#contactForm").formVery({
+        errorClass: 'error',
+        addMoneySign: true,
+        dateStyle: 'mm/dd/yyyy',
+        dateSplitter: '/',
+        success: function(valid){
+        	//if successful
+        	if(valid){
+            	//perform success function here
+            } else {
+            	//perform error function here
             }
-        });
-	});
+        }
+    });
+});
 ```
 
 Add the class name "formVery" to all inputs you wish to have validated. This will simply not allow null values in that input.
