@@ -2,17 +2,8 @@ formVery.js
 ===========
 
 formVery.js is a simple jQuery plugin that validates html forms. It is very simple to use
-and very lightweight. 
-
-Things Needed For Plugin
-========================
-<ul>
-	<li>jQuery Library v1.9+</li>
-	<li>formVery.js</li>
-	<li>CSS error class<br>
-			ie: light red background and dark red border
-	</li>
-</ul>
+and very lightweight. The .formVery() function returns a boolean value. It is suggested to
+test against this boolean value in the "success" function of the .formVery() call.
 
 How To Use
 ===========
@@ -23,7 +14,7 @@ How To Use
 $("#send").on('click',function(e){
 	//prevent form from being submitted before validation
 	e.preventDefault();
-	
+
 	$("#contactForm").formVery({
         errorClass: 'error',
         addMoneySign: true,
@@ -41,7 +32,25 @@ $("#send").on('click',function(e){
 });
 ```
 
-Add the class name "formVery" to all inputs you wish to have validated. This will simply not allow null values in that input.
+```HTML
+<form id="contactForm">
+	Name:<br>
+	<input type="text" name="userName" id="userName" class="formVery" default-data="" /><br><br>
+	Email:<br>
+	<input type="text" name="userEmail" id="userEmail" class="formVery formEmail" value="Email Address" default-data="Email Address" /><br><br>
+	<input type="submit" id="send" value="Send" />
+</form>
+```
+
+<h3>Steps to implement formVery.js</h3>
+<ul>
+	<li>Add formVery.js and the jQuery library to your page</li>
+	<li>Add the class name "formVery" to all inputs you want to verify, or not allow null values</li>
+	<li>Add the "default-data" attribute and set it to the default value of that input (default-data="" if input is empty)</li>
+	<li>- Optional - Add additional class names (listed below in table) for special validations</li>
+</ul>
+
+<h3>Special Validation</h3>
 If you want to have special validation, you must add the following classes to validate the corresponding input types:
 <table>
 	<tr>
@@ -90,8 +99,7 @@ The dateSplitter property is what the delimeter is for the dateStyle. You <u><b>
 The addMoneySign property tells formVery.js to add a '$' to the left of the input box for all .formMoney class inputs.
 
 <h3>success</h3>
-The success property is a function. This function is what runs when the form is finished validating. It is best to check if the 'valid' parameter is 
-set to true or false and perform the needed actions inside the if statement.
+The success property is a function. This function is what runs when the form is finished validating. It is best to check if the 'valid' parameter is set to true or false and perform the needed actions inside the if statement.
 
 <br><br><br>
 

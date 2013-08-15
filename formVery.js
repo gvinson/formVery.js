@@ -5,19 +5,19 @@
             errorColor: '#cf5c5c'
         }, $.fn.formVery.defaults, options);
     	//Find all textboxes in form
-    	var inputs = $(this).children('.formVery');
+    	var inputs = $(this).find('.formVery');
         //find all number only inputs
-        var numerics = $(this).children('.formNumeric'); 
+        var numerics = $(this).find('.formNumeric'); 
         //find all monetary inputs
-        var moneys = $(this).children('.formMoney');
+        var moneys = $(this).find('.formMoney');
         //radio buttons
-        var radios = $(this).children('input[type=radio]');
+        var radios = $(this).find('input[type=radio]');
         //all date inputs
-        var dates = $(this).children('.formDate');
+        var dates = $(this).find('.formDate');
         //all email inputs
-        var emails = $(this).children('.formEmail');
+        var emails = $(this).find('.formEmail');
         //all credit card inputs
-        var creditCards = $(this).children('.formCreditCard');
+        var creditCards = $(this).find('.formCreditCard');
 
     	/**********************************************
     				ON KEYDOWN ON INPUT
@@ -216,6 +216,6 @@
         /** If the form is valid
         * Do this
         **/
-    	opts.callBack(valid);
+    	opts.success(valid);
     };
 }( jQuery ));
